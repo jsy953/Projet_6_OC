@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import './index.scss'
 import Arrow from '../../assets/arrow-dropdown.svg'
+import './index.scss'
 
 function DropDown({ title, content }) {
     const [isOpen, setIsOpen] = useState(false)
-    let toggleClassCheck = isOpen ? ' click' : ' close'
+    let toggleClassCheck = isOpen ? ' open' : ' close'
 
     return (
         <div className={`dropDown${toggleClassCheck}`}>
@@ -16,7 +16,7 @@ function DropDown({ title, content }) {
                     alt="Arrow Dropdown"
                 />
             </div>
-            {isOpen ? <p className={'dropDownContent'}>{content}</p> : null}
+            {isOpen ? <div className={'dropDownContent'}>{content}</div> : null}
         </div>
     )
 }
